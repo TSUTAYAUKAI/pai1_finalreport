@@ -1,0 +1,11 @@
+# 第4・5回の講義で使用したROS 2デスクトップイメージを再利用。
+# Windows の PowerShell から docker compose up -d で起動。
+services:
+  ros2:
+    image: airobotbook/ros2-desktop-ai-robot-book-humble:latest
+    ports:
+      - "127.0.0.1:6080:80"
+    shm_size: "512m"
+    volumes:
+      - .:/workspace
+    restart: "no"
